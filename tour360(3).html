@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sala 360</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <!-- Assets utilizados no projeto -->
+      <a-assets>
+        <audio id="click-sound" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
+        <img id="imgHonest" src="../assets/honest.jpeg" />
+      </a-assets>
+      
+      
+      <!-- Camera + Cursor. -->
+      <a-camera position="0 1 0" id="cameraCena">
+        <a-cursor intersection-spawn="Event: click; mixin:voxel;">
+        </a-cursor>
+      </a-camera>
+
+      <a-sky id="img-360" radius="30" src="#imgHonest"> </a-sky>
+      <!-- <a-sphere  material="#img"> </a-sphere> -->
+      <a-text value="Honest" position="-1.5 4 -5" color="#000" scale="1.5 1.5 1.5"></a-text>
+      <a-text value="Aqui ja se faz faculdade como futuramente" position="-1.5 3.5 -5" color="#000"></a-text>
+      <a-sphere id="vai_para_cima" position="-8 10 -26" radius="0.5" color="#ed1212"></a-sphere>
+      
+
+    </a-scene>
+  </body>
+  <!-- Cria o script para lidar com a transição -->
+  <script>
+    document.querySelector("#vai_para_cima")
+      .addEventListener("mouseenter", e => {
+        location.href="tour360.html";
+      });
+  </script>
+</html>
